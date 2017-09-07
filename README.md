@@ -63,3 +63,21 @@ important aspects:
 * search
 * formats mappers (in/out channels)
 * different programming languages (in/out channels)
+
+# Setup and Execution
+
+**download sources**
+```
+git clone https://github.com/fnbk/pim.git
+cd pim
+```
+
+**install go**
+```
+brew install go
+```
+
+**run tests**
+```
+go test
+```

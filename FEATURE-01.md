@@ -115,3 +115,11 @@ float32  | "abc" | "'abc' is not a valid datatype 'float32'"
 float32  | "1"   | "'1' is not a valid datatype 'float32'"
 float32  | "1.0" | ""
 
+## write code
+
+[implement]
+
+* [validation.go](validation.go)
+* [validation_test.go](validation_test.go)
+
+
