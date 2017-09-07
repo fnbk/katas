@@ -95,3 +95,23 @@ This is a simple **data flow** to break down the feature into it's logical units
 ![save attribute](images/save_attribute_01.png)
 
 
+## first SMILE
+
+[analyse]
+
+SMILE ... **s**mallest **m**eaningful **i**ncrement for a **l**earning **e**ffect
+
+-> define Tests for `ValidateDatatype()`:
+
+datatype | value | **validation text**
+---------|-------|--------------------
+string   | "abc" | ""
+string   | "1"   | ""
+string   | "1.0" | ""
+int32    | "abc" | "'abc' is not a valid datatype 'int32'"
+int32    | "1"   | ""
+int32    | "1.0" | "'1.0' is not a valid datatype 'int32'"
+float32  | "abc" | "'abc' is not a valid datatype 'float32'"
+float32  | "1"   | "'1' is not a valid datatype 'float32'"
+float32  | "1.0" | ""
+
