@@ -123,3 +123,46 @@ float32  | "1.0" | ""
 * [validation_test.go](validation_test.go)
 
 
+## next SMILE (2nd increment)
+
+[analyse]
+
+-> define Tests for `SaveAttribute()`:
+
+Before saving an attribute first validate it and set the ValidationText.
+
+attr   | attrDB | **attrDB'** | **attr'**
+-------|--------|-------------|----------
+v,x,ID | v,y,ID | v,x,ID      | v,x,ID
+v,x,-  | -,-,-  | v,x,ID      | v,x,ID
+i,x,ID | v,y,ID | v,y,ID      | i,x,ID
+i,x,-  | -,-,-  | -,-,-       | i,x,-
+
+attr ... input attribute
+attrDB ... database attribute
+attrDB' ... updated database attribute
+attr' ... output attribute
+i  ... attribute is invalid
+v  ... attribute is valid
+x  ... attribute with value x
+y  ... attribute with value y
+ID ... attribute with ID
+-  ... attribute with no ID or attribute does not exist in DB
+
+**`upsert()`**
+
+[analyse]
+
+-> define Tests for `upsert()`:
+
+attr | attrDB | **attrDB'** | **attr'**
+-----|--------|-------------|----------
+x,ID | y,ID   | x,ID        | x,ID
+x,-  | -,-    | x,ID        | x,ID
+
+x  ... attribute with value x
+y  ... attribute with value y
+ID ... attribute with ID
+-  ... attribute with no ID or attribute does not exist in DB
+
+
