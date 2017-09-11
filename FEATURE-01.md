@@ -92,7 +92,7 @@ A structure describes valid attributes of the product.
 
 This is a simple **data flow** to break down the feature into it's logical units (operation).
 
-![save attribute](images/save_attribute_01.png)
+![save attribute](images/save_attribute_02.png)
 
 
 ## first SMILE
