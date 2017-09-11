@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestValidateDatatype(t *testing.T) {
 	// arrange
@@ -37,5 +39,55 @@ func TestValidateDatatype(t *testing.T) {
 		if expected != actual {
 			t.Errorf("\ncase:%d Value:%s Datatype:%s\nexpected:%s\nactual:%s\n", i, tt.Value, tt.Datatype, expected, actual)
 		}
+	}
+}
+
+type Attribute struct {
+	ID             string
+	Name           string
+	Value          string
+	ValidationText string
+}
+
+func TestUpsertExists(t *testing.T) {
+	// arrange
+	in := Attribute{ID: "myID", Value: "x"}
+	inDB := Attribute{ID: "myID", Value: "y"}
+	store := MemoryStore{
+		AttrMap: map[string]*Attribute{
+			"myID": &inDB,
+		},
+	}
+
+	// act
+	actual := *store.Upsert(in)
+	expected := Attribute{ID: "myID", Value: "x"}
+
+	// assert
+	if expected != actual {
+		t.Errorf("\nUpsert() failed!\nexpected:\n%+v\nactual:\n%+v\n", expected, actual)
+	}
+
+	if store.AttrMap["myID"].Value != "x" {
+		t.Errorf("\nUpsert() failed! Store value is not correct.\nexpected:\n%+v\nactual:\n%+v\n", "x", store.AttrMap["myID"].Value)
+	}
+}
+
+func TestUpsertNotExists(t *testing.T) {
+	// arrange
+	in := Attribute{ID: "", Value: "x"}
+	store := MemoryStore{AttrMap: map[string]*Attribute{}, NextID: func() string { return "myID" }}
+
+	// act
+	actual := *store.Upsert(in)
+	expected := Attribute{ID: "myID", Value: "x"}
+
+	// assert
+	if expected != actual {
+		t.Errorf("\nUpsert() failed!\nexpected:\n%+v\nactual:\n%+v\n", expected, actual)
+	}
+
+	if store.AttrMap["myID"].Value != "x" {
+		t.Errorf("\nUpsert() failed! Store value is not correct.\nexpected:\n%+v\nactual:\n%+v\n", "x", store.AttrMap["myID"].Value)
 	}
 }

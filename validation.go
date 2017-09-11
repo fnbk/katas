@@ -25,3 +25,19 @@ func ValidateDatatype(value, datatype string) string {
 	}
 	return ""
 }
+
+type MemoryStore struct {
+	AttrMap map[string]*Attribute
+	NextID  func() string
+}
+
+func (s *MemoryStore) Upsert(attr Attribute) *Attribute {
+	attrDB, ok := s.AttrMap[attr.ID]
+	if ok {
+		attrDB.Value = attr.Value
+	} else {
+		attr.ID = s.NextID()
+		s.AttrMap[attr.ID] = &attr
+	}
+	return &attr
+}

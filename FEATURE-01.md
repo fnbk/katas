@@ -166,3 +166,9 @@ ID ... attribute with ID
 -  ... attribute with no ID or attribute does not exist in DB
 
 
+## write code
+
+[implement]
+
+* [validation.go](validation.go)
+* [validation_test.go](validation_test.go)
