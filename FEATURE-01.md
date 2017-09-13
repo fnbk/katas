@@ -96,3 +96,22 @@ go run test_bed/product_ids.go
 ```
 
 visit [http://localhost:8080/products/](http://localhost:8080/products/)
+
+
+### next increment: implement productIDs()
+
+[design]
+
+![productIDs design](images/01_02_product_ids_design.png)
+
+[implement]
+
+* [product_provider.go](product_provider.go)
+* [product_provider_test.go](product_provider_test.go)
+
+```
+go test -v
+```
+
+
+
