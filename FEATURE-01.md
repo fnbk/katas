@@ -81,3 +81,18 @@ Display a list of product IDs when making "GET" request to "/products".
 ![list products design](images/01_list_products_design.png)
 
 
+### first increment: implement HTTP-Workflow with fake IDs
+
+[design]
+
+![HTTP request design](images/01_01_http_request_design.png)
+
+[implement]
+
+[test_bed/product_ids.go](test_bed/product_ids.go)
+
+```
+go run test_bed/product_ids.go
+```
+
+visit [http://localhost:8080/products/](http://localhost:8080/products/)
