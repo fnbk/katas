@@ -64,3 +64,20 @@ A: {
 }
 ```
 
+## I. Iteration: List Product IDs
+
+[analyse]
+
+Display a list of product IDs when making "GET" request to "/products".
+
+![list products overview](images/01_list_products_overview.png)
+
+1) portal: receive HTTP request
+1) kernel: `productIDs()`
+3) portal: respond HTTP request
+
+[design]
+
+![list products design](images/01_list_products_design.png)
+
+
