@@ -114,4 +114,44 @@ go test -v
 ```
 
 
+### next increment: integrate into one executable
+
+[implement]
+
+* [main.go](main.go)
+* [main_test.go](main_test.go)
+* [app.go](app.go)
+* [features/list_product_ids.feature](features/list_product_ids.feature)
+* [list_product_ids_test.go](list_product_ids_test.go)
+
+execute acceptance tests (cucumber features)
+```
+godog
+```
+
+execute tests and features
+```
+go test -v
+```
+
+execute program
+```
+go build
+./pim
+```
+visit [http://localhost:8080/products/](http://localhost:8080/products/)
+
+
+### structure diagrams
+
+**functions**
+![functions](images/01_03_structur_diagrams_functions.png)
+
+**classes**
+![classes](images/01_03_structur_diagrams_classes.png)
+
+**files**
+![files](images/01_03_structur_diagrams_files.png)
+
+
 
