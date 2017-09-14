@@ -154,4 +154,20 @@ visit [http://localhost:8080/products/](http://localhost:8080/products/)
 ![files](images/01_03_structur_diagrams_files.png)
 
 
+## II. Iteration: Show Product
+
+[analyse]
+
+Display an Product with Attributes when making "GET" request to "/products/:id"
+
+![show product overview](images/02_show_product_overview.png)
+
+1) portal: receive HTTP request
+1) kernel: `ShowProduct()`
+3) portal: respond HTTP request
+
+[design]
+
+![show product design](images/02_01_show_product_design.png)
+
 
