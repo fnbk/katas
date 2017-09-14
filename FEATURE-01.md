@@ -171,3 +171,20 @@ Display an Product with Attributes when making "GET" request to "/products/:id"
 ![show product design](images/02_01_show_product_design.png)
 
 
+### first increment: implement HTTP-Workflow with fake Product{}
+
+[design]
+
+![HTTP request design](images/02_01_http_request_design.png)
+
+[implement]
+
+[test_bed/show_product.go](test_bed/show_product.go)
+
+```
+go run test_bed/show_product.go
+```
+
+visit [http://localhost:8080/products/123](http://localhost:8080/products/123)
+
+
