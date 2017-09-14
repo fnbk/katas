@@ -12,7 +12,8 @@ import (
 )
 
 type apiFeature struct {
-	app  App
+	// app  App
+	HTTPPortal
 	resp *httptest.ResponseRecorder
 }
 
@@ -21,15 +22,17 @@ func (a *apiFeature) resetResponse(interface{}) {
 }
 
 func (a *apiFeature) thereAreIDsInTheProductDatabase(IDTable *gherkin.DataTable) error {
-	IDs := []string{}
+	products := []Product{}
 	for i, row := range IDTable.Rows {
 		if i == 0 {
 			continue
 		}
-		IDs = append(IDs, row.Cells[0].Value)
+		products = append(products, Product{ID: row.Cells[0].Value})
 	}
-	productProvider := ProductProvider{IDs: IDs}
-	a.app = App{productProvider}
+	productProvider := ProductProvider{Products: products}
+	a.HTTPPortal = HTTPPortal{ProductProvider: productProvider}
+	// a.app = App{portal}
+	// a.app = App{ProductProvider: provider}
 	return nil
 }
 
@@ -51,7 +54,10 @@ func (a *apiFeature) iSendRequestTo(method, endpoint string) (err error) {
 
 	switch endpoint {
 	case "/products":
-		a.app.ListProductIDsHandler(a.resp, req)
+		// func (a *App) ListProductIDsHandler(w http.ResponseWriter, r *http.Request) {
+		// a.app.ListProductIDsHandler(a.resp, req)
+		job := ListProductIDsJob{a.resp, req, a.HTTPPortal.ProductProvider}
+		job.Execute()
 	default:
 		err = fmt.Errorf("unknown endpoint: %s", endpoint)
 	}

@@ -215,3 +215,57 @@ go test -v
 ```
 go test -v
 ```
+
+
+### next increment: integrate into one executable
+
+[design]
+
+**HTTP-Request-Response Flow**
+
+![http portal design](images/02_03_http_portal_design.png)
+
+[implement]
+
+* [add_remove_attributes.go](add_remove_attributes.go)
+* [app.go](app.go)
+* [http_portal.go](http_portal.go)
+* [job.go](job.go)
+* [list_product_ids_job.go](list_product_ids_job.go)
+* [list_product_ids_test.go](list_product_ids_test.go)
+* [main.go](main.go)
+* [not_found_job.go](not_found_job.go)
+* [product_provider.go](product_provider.go)
+* [show_product_job.go](show_product_job.go)
+* [structure_provider.go](structure_provider.go)
+
+execute tests and features
+```
+go test -v
+```
+
+execute program
+```
+go build
+./pim
+```
+
+* visit [http://localhost:8080/products](http://localhost:8080/products)
+* visit [http://localhost:8080/products/](http://localhost:8080/products/)
+* visit [http://localhost:8080/products/123](http://localhost:8080/products/123)
+
+
+### structure diagrams
+
+**functions: application start**
+![functions](images/02_03_structur_diagrams_functions_start.png)
+
+**functions: handle http request**
+![functions](images/02_03_structur_diagrams_functions_http.png)
+
+**classes**
+![classes](images/02_03_structur_diagrams_classes.png)
+
+**files**
+![files](images/02_03_structur_diagrams_files.png)
+

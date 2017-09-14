@@ -1,56 +1,5 @@
 package main
 
-type Structure struct {
-	ID       string
-	Name     string
-	Settings []Setting
-}
-
-type Setting struct {
-	ID       string
-	Name     string
-	Tier     Tier
-	Datatype string
-}
-
-type Tier int
-
-const (
-	TierOne Tier = 1 + iota
-	TierTwo
-	TierThree
-)
-
-type Product A
-
-type A struct {
-	ID          string
-	Name        string
-	StructureID string
-	Attributes  []Attribute
-	Bs          []B
-}
-
-type B struct {
-	ID         string
-	Name       string
-	Attributes []Attribute
-	Cs         []C
-}
-
-type C struct {
-	ID         string
-	Name       string
-	Attributes []Attribute
-}
-
-type Attribute struct {
-	ID    string
-	Name  string
-	Value string
-	State string
-}
-
 func AddRemoveAttributes(p *Product, s *Structure) {
 	var filteredAttributes []Attribute
 
