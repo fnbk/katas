@@ -203,3 +203,15 @@ visit [http://localhost:8080/products/123](http://localhost:8080/products/123)
 go test -v
 ```
 
+### next increment: implement getProduct(), getStructure()
+
+[implement]
+
+* [product_provider.go](product_provider.go)
+* [product_provider_test.go](product_provider_test.go)
+* [structure_provider.go](structure_provider.go)
+* [structure_provider_test.go](structure_provider_test.go)
+
+```
+go test -v
+```
