@@ -188,3 +188,18 @@ go run test_bed/show_product.go
 visit [http://localhost:8080/products/123](http://localhost:8080/products/123)
 
 
+### next increment: implement AddRemoveAttributes()
+
+[design]
+
+![productIDs design](images/02_02_show_product_design.png)
+
+[implement]
+
+* [add_remove_attributes.go](add_remove_attributes.go)
+* [add_remove_attributes_test.go](add_remove_attributes_test.go)
+
+```
+go test -v
+```
+
