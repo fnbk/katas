@@ -88,5 +88,5 @@ brew install go
 
 **run tests**
 ```
-go test
+go test -v ./...
 ```

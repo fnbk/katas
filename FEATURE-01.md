@@ -269,3 +269,76 @@ go build
 **files**
 ![files](images/02_03_structur_diagrams_files.png)
 
+
+## code review: refactor
+
+* improve project structure (use go modules)
+* HTTPPortal.route() - don't mix up operation and integration (find route and execute job)
+* improve flow design
+
+### HTTP-Request-Response Flow
+(improved flow design)
+
+![improved http portal design](images/02_03_http_portal_design2.png)
+
+**new project structre**
+```
+
+├── main.go
+├── app
+    ├── app.go
+    ├── core
+    │   ├── add_remove_attributes.go
+    │   ├── add_remove_attributes_test.go
+    │   └── core.go
+    ├── model
+    │   ├── product.go
+    │   └── structure.go
+    ├── portal
+    │   └── http_portal.go
+    └── provider
+        ├── product_provider.go
+        ├── product_provider_test.go
+        ├── structure_provider.go
+        └── structure_provider_test.go
+
+```
+
+### structure diagrams
+
+**functions: application start**
+![functions](images/02_03_structur_diagrams_functions_start.png)
+
+**functions: handle http request**
+![functions](images/02_03_structur_diagrams_functions_http2.png)
+
+**classes**
+![classes](images/02_03_structur_diagrams_classes2.png)
+
+**packages**
+![classes](images/02_03_structur_diagrams_packages.png)
+
+**files**
+![files](images/02_03_structur_diagrams_files2.png)
+
+
+### execution
+
+execute all tests and features
+```
+go test -v ./...
+```
+
+execute program
+```
+go build
+./pim
+```
+
+* visit [http://localhost:8080/products](http://localhost:8080/products)
+* visit [http://localhost:8080/products/](http://localhost:8080/products/)
+* visit [http://localhost:8080/products/123](http://localhost:8080/products/123)
+
+
+
+

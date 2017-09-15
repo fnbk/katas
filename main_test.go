@@ -4,6 +4,7 @@ import (
 	"os"
 	"testing"
 
+	"bitbucket.scm.otto.de/scm/primary/pim/features"
 	"github.com/DATA-DOG/godog"
 )
 
@@ -17,7 +18,7 @@ func TestMain(m *testing.M) {
 	}
 	status := godog.RunWithOptions("godog", func(s *godog.Suite) {
 		// godog.SuiteContext(s)
-		FeatureContext(s)
+		features.FeatureContext(s)
 	}, godog.Options{
 		Format: format,
 		Paths:  []string{"features"},
