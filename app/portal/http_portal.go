@@ -17,27 +17,27 @@ type HTTPPortal struct {
 }
 
 func (p *HTTPPortal) ServeHTTP(writer http.ResponseWriter, reader *http.Request) {
-	handleNotFound := func() {
+	onInvalidRoute := func() {
 		p.HandleNotFound(writer, reader)
 	}
-	handleListProductIDs := func() {
+	onProductIndexFound := func() {
 		p.HandleListProductIDs(writer, reader)
 	}
-	handleShowProduct := func() {
+	onProductShowFound := func() {
 		p.HandleShowProduct(writer, reader)
 	}
-	p.route(reader, handleNotFound, handleListProductIDs, handleShowProduct)
+	p.route(reader, onInvalidRoute, onProductIndexFound, onProductShowFound)
 }
 
-func (p *HTTPPortal) route(reader *http.Request, handleNotFound, handleListProductIDs, handleShowProduct func()) {
+func (p *HTTPPortal) route(reader *http.Request, onInvalidRoute, onProductIndexFound, onProductShowFound func()) {
 	showProductPathRegex := showProductPath.FindStringSubmatch(reader.URL.Path)
 	listProductIDsPathRegex := listProductIDsPath.FindStringSubmatch(reader.URL.Path)
 	if showProductPathRegex != nil {
-		handleShowProduct()
+		onProductShowFound()
 	} else if listProductIDsPathRegex != nil {
-		handleListProductIDs()
+		onProductIndexFound()
 	} else {
-		handleNotFound()
+		onInvalidRoute()
 	}
 }
 

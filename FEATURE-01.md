@@ -279,7 +279,7 @@ go build
 ### HTTP-Request-Response Flow
 (improved flow design)
 
-![improved http portal design](images/02_03_http_portal_design2.png)
+![improved http portal design](images/02_03_http_portal_design3.png)
 
 **new project structre**
 ```
@@ -337,7 +337,7 @@ go build
 
 * visit [http://localhost:8080/products](http://localhost:8080/products)
 * visit [http://localhost:8080/products/](http://localhost:8080/products/)
-* visit [http://localhost:8080/products/123](http://localhost:8080/products/123)
+* visit [http://localhost:8080/products/1](http://localhost:8080/products/1)
 
 
 
