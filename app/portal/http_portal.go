@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"regexp"
 
-	"bitbucket.scm.otto.de/scm/primary/pim/app/core"
-	"bitbucket.scm.otto.de/scm/primary/pim/app/model"
+	"github.com/fnbk/pim/app/core"
+	"github.com/fnbk/pim/app/model"
 )
 
 var showProductPath = regexp.MustCompile("^/products/([a-zA-Z0-9]+)$")

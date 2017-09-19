@@ -3,7 +3,7 @@ package app
 import (
 	"net/http"
 
-	"bitbucket.scm.otto.de/scm/primary/pim/app/portal"
+	"github.com/fnbk/pim/app/portal"
 )
 
 type App struct {

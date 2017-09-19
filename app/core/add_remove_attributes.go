@@ -1,7 +1,7 @@
 package core
 
 import (
-	"bitbucket.scm.otto.de/scm/primary/pim/app/model"
+	"github.com/fnbk/pim/app/model"
 )
 
 func AddRemoveAttributes(p *model.Product, s *model.Structure) {

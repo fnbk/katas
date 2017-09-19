@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"bitbucket.scm.otto.de/scm/primary/pim/features"
 	"github.com/DATA-DOG/godog"
+	"github.com/fnbk/pim/features"
 )
 
 func TestMain(m *testing.M) {

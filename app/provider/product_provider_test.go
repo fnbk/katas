@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"bitbucket.scm.otto.de/scm/primary/pim/app/model"
+	"github.com/fnbk/pim/app/model"
 )
 
 func TestProductIDs(t *testing.T) {

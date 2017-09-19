@@ -7,10 +7,10 @@ import (
 	"net/http/httptest"
 	"strings"
 
-	"bitbucket.scm.otto.de/scm/primary/pim/app/core"
-	"bitbucket.scm.otto.de/scm/primary/pim/app/model"
-	"bitbucket.scm.otto.de/scm/primary/pim/app/portal"
-	"bitbucket.scm.otto.de/scm/primary/pim/app/provider"
+	"github.com/fnbk/pim/app/core"
+	"github.com/fnbk/pim/app/model"
+	"github.com/fnbk/pim/app/portal"
+	"github.com/fnbk/pim/app/provider"
 
 	"github.com/DATA-DOG/godog"
 	"github.com/DATA-DOG/godog/gherkin"

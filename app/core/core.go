@@ -1,8 +1,8 @@
 package core
 
 import (
-	"bitbucket.scm.otto.de/scm/primary/pim/app/model"
-	"bitbucket.scm.otto.de/scm/primary/pim/app/provider"
+	"github.com/fnbk/pim/app/model"
+	"github.com/fnbk/pim/app/provider"
 )
 
 type Core struct {

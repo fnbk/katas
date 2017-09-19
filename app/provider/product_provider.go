@@ -1,6 +1,8 @@
 package provider
 
-import "bitbucket.scm.otto.de/scm/primary/pim/app/model"
+import (
+	"github.com/fnbk/pim/app/model"
+)
 
 type ProductProvider struct {
 	Products []model.Product
