@@ -17,8 +17,7 @@ func TestMain(m *testing.M) {
 		}
 	}
 	status := godog.RunWithOptions("godog", func(s *godog.Suite) {
-		// godog.SuiteContext(s)
-		features.FeatureContext(s)
+		features.SuiteContext(s)
 	}, godog.Options{
 		Format: format,
 		Paths:  []string{"features"},

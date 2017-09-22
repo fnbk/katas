@@ -12,7 +12,7 @@ type Core struct {
 
 func (k *Core) ShowProduct(id string) *model.Product {
 	product := k.ProductProvider.GetProduct(id)
-	structure := k.StructureProvider.GetStructure(id)
+	structure := k.StructureProvider.GetStructure(product.StructureID)
 	AddRemoveAttributes(product, structure)
 	return product
 }

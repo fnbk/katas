@@ -8,7 +8,7 @@ Feature: list product IDs
       | ID |
       | 1  |
       | 2  |
-    When I send "GET" request to "/products"
+    When I send "GET" request to "/products/"
     Then the response code should be 200
     And the response should match json:
       """
@@ -18,7 +18,7 @@ Feature: list product IDs
   Scenario: no IDs
     Given there are IDs in the product database:
       | ID |
-    When I send "GET" request to "/products"
+    When I send "GET" request to "/products/"
     Then the response code should be 200
     And the response should match json:
       """
