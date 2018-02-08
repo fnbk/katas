@@ -1,0 +1,10 @@
+{
+  "engines": {
+    "node": ">=9.5.0"
+  },
+  "dependencies": {
+    "faucet": "^0.0.1",
+    "tape": "^4.8.0",
+    "yargs": "^11.0.0"
+  }
+}
