@@ -5,6 +5,7 @@
   "dependencies": {
     "faucet": "^0.0.1",
     "tape": "^4.8.0",
+    "tty": "^1.0.1",
     "yargs": "^11.0.0"
   }
 }
