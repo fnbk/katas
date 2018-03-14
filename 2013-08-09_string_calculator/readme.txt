@@ -1,0 +1,4 @@
+
+
+### run
+jasmine-node spec/

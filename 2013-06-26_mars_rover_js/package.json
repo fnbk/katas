@@ -1,0 +1,19 @@
+{
+  "name": "mars_rover_kata",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fnbk/mars_rover_kata.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "gitHead": "7a6d4b8bddf164df326aa45c9fd33447d73ec064",
+  "devDependencies": {
+    "jasmine-node": "~1.4.x"
+  }
+}

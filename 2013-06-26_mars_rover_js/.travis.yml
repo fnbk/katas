@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "0.10"
+
+before_script:
+  - npm install -g jasmine-node
+
+branches:
+  only:
+    - master
+    - develop
+
+notifications:
+  email: false

@@ -1,0 +1,19 @@
+{
+  "name": "demo_socketio",
+  "version": "0.0.0",
+  "description": "Simple socket io demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+      "socket.io" :  "0.9.14"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.4.x",
+    "socket.io-client" : "0.9.16"
+  }
+}
