@@ -1,0 +1,6 @@
+== Screenleap Gem in Action
+
+This app is a simple demonstration of how to use the {screenleap gem}[https://github.com/fnbk/screenleap]. The gem is a simple wrapper for the Screenleap API. 
+
+
+http://i.imm.io/17bjJ.png

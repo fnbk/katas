@@ -1,0 +1,19 @@
+---
+language: ruby
+rvm:
+- 1.8.7
+- 1.9.2
+- 1.9.3
+- 2.0.0
+env:
+  global:
+  - secure: ! 'IUDBlScy1JDd02BoLKSHn2820CP9QSWX1ZRvjjTZVcAEvpB70drNANJEWn/U
+
+      uTzwkZEPNaJCbmQg+acRrQwCUkn/ktX+Jdycv6PwlcyZMobdQEEhJ/joZEbR
+
+      b1VHtua2oI6UaCSMkvevMeg353VXWOFC4cXgua/yjewCSXQk/M8='
+  - secure: ! 'Wr3NV+emSyX9wXffkcrvP6mo8rLDEO02Q4jRgqoGNP5e7wkr3pW7H5LPcKlS
+
+      Rloi4QzhH+K+9fMDCkDX/Jz2bPpTlTo1W8D4SLDnJisaOADN8Q9W7ZVwAFsf
+
+      I4AVV4Uzjvi3pW5MchxoO6Z9rv8qHqYK6B5CJwO1CpqIC1N6C/0='

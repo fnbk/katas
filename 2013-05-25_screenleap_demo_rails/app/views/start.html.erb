@@ -1,0 +1,134 @@
+<p>Screenleap API: <%= link_to "http://www.screenleap.com/api/reference", "http://www.screenleap.com/api/reference", {:target => "_blank"} %></p>
+
+<table>
+  <tr>
+    <td>accountid:</td>
+    <td><input id="accountid" value="" width="20"></td>
+  </tr>
+  <tr>
+    <td>authtoken:</td>
+    <td><input id="authtoken" value="" width="20"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><%= button_tag "create", {:id => "create"} %></td>
+    <td><%= button_tag "stop", {:id => "stop"} %></td>
+    <td><%= button_tag "status", {:id => "status"} %></td>
+    <td><%= button_tag "account", {:id => "account"} %></td>
+    <td id="applet-html"><%= link_to "appletHtml", "applet_html", {:target => "_blank"} %></td>
+    <td id="viewer-url"> <%= link_to "viewerUrl", "viewer_url", {:target => "_blank"} %></td>
+  </tr>
+</table>
+
+<br>
+<br>
+<div id="messages">
+</div>
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+<script>
+    //
+    // helper functions
+    //
+    var messagesElement = document.getElementById('messages');
+    var lastMessageElement = null;
+
+    function addMessage(message) {
+        var newMessageElement = document.createElement('div');
+        newMessageElement.appendChild(document.createElement('pre')).innerHTML = message;
+
+        messagesElement.insertBefore(newMessageElement, lastMessageElement);
+        lastMessageElement = newMessageElement;
+    }
+
+    function replacer(key, value) {
+        if (key === "appletHtml") {
+            return '< applet ... --filtered-- ...>< / applet >';
+        }
+        return value;
+    }
+
+
+    //
+    // handle button click events
+    //
+    $("#create").click(function() {
+        var message = {
+            "accountid" : $("#accountid").val(),
+            "authtoken" : $("#authtoken").val()
+        };
+        $.ajax({
+            url: "/create",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(message),
+            dataType: 'json',
+            success: function (data) {
+                addMessage('create response: <br>' + JSON.stringify(data, replacer, '   '))
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                addMessage("error: " + XMLHttpRequest.responseText);
+            }
+        });
+    });
+    $("#stop").click(function() {
+        var message = {
+            "accountid" : $("#accountid").val(),
+            "authtoken" : $("#authtoken").val()
+        };
+        $.ajax({
+            url: "/stop",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(message),
+            dataType: 'json',
+            success: function (data) {
+                addMessage('stop response: <br>' + JSON.stringify(data, replacer, '   '))
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                addMessage("error: " + XMLHttpRequest.responseText);
+            }
+        });
+    });
+    $("#status").click(function() {
+        var message = {
+            "accountid" : $("#accountid").val(),
+            "authtoken" : $("#authtoken").val()
+        };
+        ;
+        $.ajax({
+            url: "/status",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(message),
+            dataType: 'json',
+            success: function (data) {
+                addMessage('status response: <br>' + JSON.stringify(data, replacer, '   '))
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                addMessage("error: " + XMLHttpRequest.responseText);
+            }
+        });
+    });
+    $("#account").click(function() {
+        var message = {
+            "accountid" : $("#accountid").val(),
+            "authtoken" : $("#authtoken").val()
+        };
+        $.ajax({
+            url: "/account",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(message),
+            dataType: 'json',
+            success: function (data) {
+                addMessage('account response: <br>' + JSON.stringify(data, replacer, '   '))
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                addMessage("error: " + XMLHttpRequest.responseText);
+            }
+        });
+    });
+</script>
